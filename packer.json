@@ -1,6 +1,7 @@
 {
   "variables": {
-    "aws_region": ""
+    "aws_region": "",
+    "version": ""
   },
   "builders": [
     {
@@ -13,7 +14,10 @@
           "root-device-type": "ebs"
         },
         "most_recent": true
-      }
+      },
+      "instance_type": "t2.small",
+      "ssh_username": "ec2-user",
+      "ami_name": "drewsonne-gocd-base-agent-{{user `version`}}"
     }
   ]
 }
