@@ -1,0 +1,19 @@
+{
+  "variables": {
+    "aws_region": ""
+  },
+  "builders": [
+    {
+      "type": "amazon-ebs",
+      "region": "{{user `aws_region`}}",
+      "source_ami_filter": {
+        "filters": {
+          "virtualization-type": "hvm",
+          "name": "amzn2-ami-hvm-2.0.*-x86_64-gp2",
+          "root-device-type": "ebs"
+        },
+        "most_recent": true
+      }
+    }
+  ]
+}
